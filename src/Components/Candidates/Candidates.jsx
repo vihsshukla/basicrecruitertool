@@ -8,7 +8,8 @@ const Candidates=()=>{
   useEffect(()=>{
     setLoading(true);
     fetch(CONSTANT.BASE_URL+'getCandidates/all',{
-      method:'GET'
+      method:'GET',
+      referrerPolicy: 'no-referrer'
     })
     .then((response)=>{
       return response.json();
