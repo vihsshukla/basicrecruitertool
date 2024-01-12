@@ -1,15 +1,13 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import './Table.css';
-import CONSTANT from '../../Constants/Constants';
-import SnackbarContext from '../../Context/Snackbar/SnackbarState';
-import Modal from '../Modal/Modal';
+import Loader from '../Loader/Loader';
+import { useNavigate } from 'react-router-dom';
 
-const Table = ({ data }) => {
+const Table = ({ data , loading}) => {
   const [selectedCandidates, setSelectedCandidates] = React.useState([]);
   const [selectAll, setSelectAll] = React.useState(false);
-  const [isModalOpen,setIsModalOpen]=useState(false);
-  const [status,setStatus]=useState('');
-  const { setAlertStatus, addAlertDetails } = useContext(SnackbarContext);
+
+  const navigate=useNavigate();
 
   const handleCheckboxChange = (emailId) => {
     if (selectedCandidates.includes(emailId)) {
@@ -33,67 +31,9 @@ const Table = ({ data }) => {
     console.log(selectedCandidates);
   };
 
-  const handleUpdate=()=>{
-    console.log({isModalOpen});
-    setIsModalOpen(true);
-    console.log({isModalOpen});
-  }
-
-  const closeModal=()=>{
-    setIsModalOpen(false);
-  }
-
-  const handleStatus=(event)=>{
-    event.preventDefault();
-    setStatus(event.target.value);
-    console.log({status});
-  }
-
-  const handleConfirm=()=>{
-    fetch(CONSTANT.BASE_URL+'updateCandidateStatus',{
-      method:'POST',
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body:JSON.stringify({status:status,emailId:selectedCandidates.join(',')})
-    })
-    .then((res)=>{
-      if(res.status===200){
-        setAlertStatus(true);
-        addAlertDetails('success','Current Status updated Successfully.');
-      }
-    })
-    .catch((err)=>{
-      console.log(err.message);
-      setAlertStatus(true);
-      addAlertDetails('error','We faced issue while updating status.');
-    });
-    setIsModalOpen(false);
-    setTimeout(()=>{
-      window.location.reload();
-    },3000);
-  }
-
   return (
     <>
-      {selectedCandidates.length!==0 && <button className='update-status' onClick={handleUpdate}>Update</button>}
-      {isModalOpen && <div>
-                        <Modal isOpen={isModalOpen} onClose={closeModal}>
-                          <h2>Update the status for the following candidates.</h2>
-                          <p>Candidates: {selectedCandidates.join(', ')}</p>
-                          <label>
-                            Current Status:
-                            <input
-                              type="text"
-                              name="currentStatus"
-                              required="true"
-                              onChange={handleStatus}
-                            />
-                          </label>
-                          <button className='confirm' onClick={handleConfirm}>Confirm</button>
-                        </Modal>
-                      </div>
-      }
+      {selectedCandidates.length!==0 && <button className='update-status' onClick={()=>navigate(`/candidates/updateStatus/${selectedCandidates}`)}>Update</button>}
       <table>
         <thead>
           <tr>
@@ -147,6 +87,8 @@ const Table = ({ data }) => {
           ))}
         </tbody>
       </table>
+      
+      {loading && <Loader/>}
     </>
   );
 };

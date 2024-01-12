@@ -7,6 +7,8 @@ import Navbar from './Components/Navbar/Navbar';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SnackbarContext from './Context/Snackbar/SnackbarState';
 import Snackbar from './Components/Snackbar/Snackbar';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+import UpdateModal from './Components/Modal/UpdateModal/UpdateModal';
 
 
 function App() {
@@ -16,12 +18,14 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
-        {showAlert && alert && <Snackbar severity={alert?.severity} displayText={alert?.displayText}/>}
+        <ErrorBoundary><Navbar /></ErrorBoundary>
+        {showAlert && alert && <ErrorBoundary><Snackbar severity={alert?.severity} displayText={alert?.displayText}/></ErrorBoundary>}
         <Routes>
-          <Route path='/' element={<Home />}></Route>
-          <Route path='/candidates' element={<Candidates />}></Route>
-          <Route path='/add-candidate' element={<Form />}></Route>
+          <Route path='/' element={<ErrorBoundary><Home /></ErrorBoundary>}></Route>
+          <Route path='/candidates' element={<ErrorBoundary><Candidates /></ErrorBoundary>}></Route>
+          <Route path='/add-candidate' element={<ErrorBoundary><Form /></ErrorBoundary>}></Route>
+          <Route path='/candidates/updateStatus/:data' element={<ErrorBoundary><UpdateModal /></ErrorBoundary>}></Route>
+          {/* <Route path="*" element={<NoPage />} /> */}
         </Routes>
       </BrowserRouter>
     </div>

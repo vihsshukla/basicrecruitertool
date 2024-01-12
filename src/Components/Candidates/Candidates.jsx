@@ -1,9 +1,12 @@
 import Table from "../Table/Table";
 import CONSTANT from "../../Constants/Constants.js";
 import { useEffect, useState } from "react";
+
 const Candidates=()=>{
   const [candidateData,setCandidateData]=useState([]);
+  const [loading,setLoading]=useState(false);
   useEffect(()=>{
+    setLoading(true);
     fetch(CONSTANT.BASE_URL+'getCandidates/all',{
       method:'GET'
     })
@@ -12,13 +15,13 @@ const Candidates=()=>{
     })
     .then((data)=>{
       setCandidateData(data);
+      setLoading(false);
     });
-    console.log({candidateData});
   },[]);
 
   return (<>
     <h3>Candidates List</h3>
-    <Table data={candidateData}/>
+    <Table data={candidateData} loading={loading}/>
   </>);
 }
 

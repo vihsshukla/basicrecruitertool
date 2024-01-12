@@ -67,7 +67,7 @@ const Form=()=>{
         <input
           type="text"
           name="firstName"
-          required="true"
+          required={true}
           value={formData.firstName}
           onChange={handleInputChange}
         />
@@ -88,7 +88,7 @@ const Form=()=>{
         <input
           type="text"
           name="lastName"
-          required="true"
+          required={true}
           value={formData.lastName}
           onChange={handleInputChange}
         />
@@ -99,7 +99,7 @@ const Form=()=>{
         <input
           type="email"
           name="email"
-          required="true"
+          required={true}
           value={formData.email}
           onChange={handleInputChange}
         />
@@ -110,7 +110,7 @@ const Form=()=>{
         <input
           type="phone"
           name="phone"
-          required="true"
+          required={true}
           value={formData.phone}
           onChange={handleInputChange}
         />
@@ -131,7 +131,7 @@ const Form=()=>{
         <input
           type="string"
           name="expectedSalary"
-          required="true"
+          required={true}
           value={formData.expectedSalary}
           onChange={handleInputChange}
         />
@@ -144,7 +144,7 @@ const Form=()=>{
         <input
           type="number"
           name="nodeExperienceinyears"
-          required="true"
+          required={true}
           value={formData.nodeExperienceinyears}
           onChange={handleInputChange}
         />
@@ -152,7 +152,7 @@ const Form=()=>{
         <input
           type="number"
           name="nodeExperienceinmonths"
-          required="true"
+          required={true}
           value={formData.nodeExperienceinmonths}
           onChange={handleInputChange}
         />
@@ -165,7 +165,7 @@ const Form=()=>{
         <input
           type="number"
           name="reactExperienceinyears"
-          required="true"
+          required={true}
           value={formData.reactExperienceinyears}
           onChange={handleInputChange}
         />
@@ -173,7 +173,7 @@ const Form=()=>{
         <input
           type="number"
           name="reactExperienceinmonths"
-          required="true"
+          required={true}
           value={formData.reactExperienceinmonths}
           onChange={handleInputChange}
         />
