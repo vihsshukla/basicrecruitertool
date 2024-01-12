@@ -46,18 +46,19 @@ const Form=()=>{
       if(res.status===200){
         setAlertStatus(true);
         addAlertDetails('success','Candidate Added successfully.');
+        navigate('/candidates');
       }else if(res.status===403){
         setAlertStatus(true);
         addAlertDetails('warning','Candidate Already exists in the db.');
+        navigate('/candidates');
       }
     })
     .catch((err)=>{
       console.log(err.message);
       setAlertStatus(true);
       addAlertDetails('error','We faced some technical issue while adding candidates.');
+      navigate('/candidates');
     });
-
-    navigate('/candidates');
   };
   return (<>
     <h3>Candidate Form</h3>
