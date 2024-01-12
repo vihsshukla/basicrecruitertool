@@ -2,7 +2,7 @@
   "name": "recruiter-tool",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://34.227.223.34:3000",
+  "proxy": "https://vihsshukla.linkpc.net/",
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
