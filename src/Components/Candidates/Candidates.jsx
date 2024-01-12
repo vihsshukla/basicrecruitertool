@@ -18,7 +18,7 @@ const Candidates=()=>{
       setCandidateData(data);
       setLoading(false);
     });
-  },[]);
+  },[candidateData]);
 
   return (<>
     <h3>Candidates List</h3>
