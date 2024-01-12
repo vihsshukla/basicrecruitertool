@@ -19,6 +19,7 @@ const Table = ({ data , loading}) => {
     }
     console.log(selectedCandidates);
   };
+  
 
   const handleSelectAllChange = () => {
     if (selectAll) {
