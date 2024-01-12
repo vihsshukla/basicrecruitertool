@@ -32,15 +32,17 @@ const UpdateModal=()=>{
       if(res.status===200){
         setAlertStatus(true);
         addAlertDetails('success','Current Status updated Successfully.');
+        setIsModalOpen(false);
+        navigate('/candidates');
       }
     })
     .catch((err)=>{
       console.log(err.message);
       setAlertStatus(true);
       addAlertDetails('error','We faced issue while updating status.');
+      setIsModalOpen(false);
+      navigate('/candidates');
     });
-    setIsModalOpen(false);
-    navigate('/candidates');
   }
 
   return (<div>
