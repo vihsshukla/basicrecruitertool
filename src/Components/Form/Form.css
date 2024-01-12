@@ -5,22 +5,33 @@ form {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  margin-bottom: 100px;
 }
 
 label {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8px;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
 }
 
 input {
-  width: 100%;
+  width: 65%;
   padding: 8px;
   margin-bottom: 15px;
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
+  flex: 1;
 }
+
+
+label > span {
+  margin-top: -15px;
+}
+
 
 button {
   background-color: #4caf50;
@@ -32,5 +43,5 @@ button {
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #0056b3;
 }

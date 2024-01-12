@@ -61,10 +61,12 @@ const Form=()=>{
     });
   };
   return (<>
-    <h3>Candidate Form</h3>
+    <header className="header">
+        <h3 className="h3text">Candidate Form</h3>
+    </header>
     <form onSubmit={handleSubmit} className='form-container'>
       <label>
-        First Name:
+        <span>First Name:</span>
         <input
           type="text"
           name="firstName"
@@ -75,7 +77,7 @@ const Form=()=>{
       </label>
 
       <label>
-        Middle Name:
+        <span>Middle Name:</span>
         <input
           type="text"
           name="middleName"
@@ -85,7 +87,7 @@ const Form=()=>{
       </label>
 
       <label>
-        Last Name:
+        <span>Last Name:</span>
         <input
           type="text"
           name="lastName"
@@ -96,7 +98,7 @@ const Form=()=>{
       </label>
 
       <label>
-        Email:
+        <span>Email:</span>
         <input
           type="email"
           name="email"
@@ -107,7 +109,7 @@ const Form=()=>{
       </label>
 
       <label>
-        Phone:
+        <span>Phone:</span>
         <input
           type="phone"
           name="phone"
@@ -118,7 +120,7 @@ const Form=()=>{
       </label>
 
       <label>
-        Skills:
+        <span>Skills:</span>
         <input
           type="skills"
           name="skills"
@@ -128,7 +130,7 @@ const Form=()=>{
       </label>
 
       <label>
-      Expected Salary:
+      <span>Expected Salary:</span>
         <input
           type="string"
           name="expectedSalary"
@@ -139,9 +141,8 @@ const Form=()=>{
       </label>
 
       <label>
-      Node.JS Experience:
-      <br/>
-        Years:
+      <span>Node Experience:</span>
+      <span>Years:</span>
         <input
           type="number"
           name="nodeExperienceinyears"
@@ -149,7 +150,7 @@ const Form=()=>{
           value={formData.nodeExperienceinyears}
           onChange={handleInputChange}
         />
-        Months:
+        <span>Months:</span>
         <input
           type="number"
           name="nodeExperienceinmonths"
@@ -160,9 +161,8 @@ const Form=()=>{
       </label>
 
       <label>
-      React.JS Experience:
-      <br/>
-        Years:
+      <span>React Experience:</span>
+        <span>Years:</span>
         <input
           type="number"
           name="reactExperienceinyears"
@@ -170,7 +170,7 @@ const Form=()=>{
           value={formData.reactExperienceinyears}
           onChange={handleInputChange}
         />
-        Months:
+        <span>Months:</span>
         <input
           type="number"
           name="reactExperienceinmonths"

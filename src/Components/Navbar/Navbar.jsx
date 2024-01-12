@@ -8,13 +8,13 @@ const Navbar=()=>{
         Basic Recruitment Tool
       </div>
       <div className="right">
-        <div className="navbar-item" onClick={()=>navigate('/')}>
+        <div className="navbar-item-text" onClick={()=>navigate('/')}>
           Home
         </div>
-        <div className="navbar-item" onClick={()=>navigate('/candidates')}>
+        <div className="navbar-item-text" onClick={()=>navigate('/candidates')}>
           Candidates
         </div>
-        <div className="navbar-item">
+        <div className="navbar-item-button">
           <button className="add-candidate" onClick={()=>navigate('/add-candidate')}>
             Add Candidate
           </button>

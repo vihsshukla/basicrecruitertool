@@ -2,6 +2,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  margin-bottom: 100px;
 }
 
 th, td {
@@ -22,7 +23,12 @@ tr:hover {
   background-color: #0056b3;
 }
 
-.button-status:hover{
+.update-status{
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.update-status:hover{
   background-color: #0056b3;
 }
 

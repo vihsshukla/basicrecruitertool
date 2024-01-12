@@ -11,14 +11,19 @@
 .right{
   display: flex;
   justify-content: space-around;
-  gap: 12px;
+  gap: 20px;
 }
 
-.navbar-item{
+.navbar-item-text{
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+.navbar-item-button{
   font-size: 18px;
 }
 
-.navbar-item:hover{
+.navbar-item-text:hover{
   color: #0056b3;
   text-decoration: underline;
 }

@@ -1,6 +1,7 @@
 import Table from "../Table/Table";
 import CONSTANT from "../../Constants/Constants.js";
 import { useEffect, useState } from "react";
+import './Candidates.css';
 
 const Candidates=()=>{
   const [candidateData,setCandidateData]=useState([]);
@@ -21,7 +22,9 @@ const Candidates=()=>{
   },[]);
 
   return (<>
-    <h3>Candidates List</h3>
+    <header className="header">
+        <h3 className="h3text">Candidates List</h3>
+    </header>
     <Table data={candidateData} loading={loading}/>
   </>);
 }

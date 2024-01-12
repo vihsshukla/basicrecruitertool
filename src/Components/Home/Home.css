@@ -10,12 +10,18 @@ body {
   color: #fff;
   padding: 10px;
   text-align: center;
+  height: 30px;
+}
+
+.h1text{
+  color: #f4f4f4;
+  margin-top: -4px;
 }
 
 .main {
   max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
+  margin: 30px auto;
+  padding: 30px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -41,14 +47,4 @@ p {
 
 .cta-button:hover {
   background-color: #0056b3;
-}
-
-.footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
 }

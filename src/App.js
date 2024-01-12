@@ -9,6 +9,7 @@ import SnackbarContext from './Context/Snackbar/SnackbarState';
 import Snackbar from './Components/Snackbar/Snackbar';
 import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 import UpdateModal from './Components/Modal/UpdateModal/UpdateModal';
+import Footer from './Components/Footer/Footer.jsx';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path='/candidates/updateStatus/:data' element={<ErrorBoundary><UpdateModal /></ErrorBoundary>}></Route>
           {/* <Route path="*" element={<NoPage />} /> */}
         </Routes>
+        <ErrorBoundary><Footer/></ErrorBoundary>
       </BrowserRouter>
     </div>
   );
