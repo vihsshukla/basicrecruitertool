@@ -1,0 +1,17 @@
+.required {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.required span::after {
+  content: ' *';
+  color: red;
+  margin-right: 4px; 
+}
+
+label > span {
+  margin-top: -15px;
+}

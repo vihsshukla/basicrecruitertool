@@ -3,6 +3,7 @@ import CONSTANT from '../../../Constants/Constants';
 import SnackbarContext from '../../../Context/Snackbar/SnackbarState';
 import Modal from '../../Modal/Modal';
 import { useNavigate, useParams } from 'react-router-dom';
+import './UpdateModal.css';
 const UpdateModal=()=>{
   const [status,setStatus]=useState('');
   const { setAlertStatus, addAlertDetails } = useContext(SnackbarContext);
@@ -49,12 +50,12 @@ const UpdateModal=()=>{
             <Modal isOpen={isModalOpen} onClose={closeModal}>
               <h2>Update the status for the following candidates.</h2>
               <p>Candidates: {data}</p>
-              <label>
-                Current Status:
+              <label className='required'>
+                <span>Current Status:</span>
                 <input
                   type="text"
                   name="currentStatus"
-                  required="true"
+                  required={true}
                   onChange={handleStatus}
                 />
               </label>

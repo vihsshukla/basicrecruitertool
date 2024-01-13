@@ -60,12 +60,12 @@ const Form=()=>{
       navigate('/candidates');
     });
   };
-  return (<>
-    <header className="header">
+  return (<div className='form-container-main'>
+    <header className="form-header">
         <h3 className="h3text">Candidate Form</h3>
     </header>
     <form onSubmit={handleSubmit} className='form-container'>
-      <label>
+      <label className='required'>
         <span>First Name:</span>
         <input
           type="text"
@@ -86,7 +86,7 @@ const Form=()=>{
         />
       </label>
 
-      <label>
+      <label className='required'>
         <span>Last Name:</span>
         <input
           type="text"
@@ -97,7 +97,7 @@ const Form=()=>{
         />
       </label>
 
-      <label>
+      <label className='required'>
         <span>Email:</span>
         <input
           type="email"
@@ -108,7 +108,7 @@ const Form=()=>{
         />
       </label>
 
-      <label>
+      <label className='required'>
         <span>Phone:</span>
         <input
           type="phone"
@@ -129,7 +129,7 @@ const Form=()=>{
         />
       </label>
 
-      <label>
+      <label className='required'>
       <span>Expected Salary:</span>
         <input
           type="string"
@@ -140,7 +140,7 @@ const Form=()=>{
         />
       </label>
 
-      <label>
+      <label className='required'>
       <span>Node Experience:</span>
       <span>Years:</span>
         <input
@@ -160,7 +160,7 @@ const Form=()=>{
         />
       </label>
 
-      <label>
+      <label className='required'>
       <span>React Experience:</span>
         <span>Years:</span>
         <input
@@ -182,7 +182,7 @@ const Form=()=>{
 
       <button type="submit">Submit</button>
     </form>
-  </>);
+  </div>);
 }
 
 export default Form;

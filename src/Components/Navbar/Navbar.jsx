@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 const Navbar=()=>{
   const navigate=useNavigate(null);
   return (<>
+  <div className="sticky-header">
     <div className="navbar-items">
       <div className="left">
         Basic Recruitment Tool
@@ -21,6 +22,7 @@ const Navbar=()=>{
         </div>
       </div>
     </div>
+  </div>
   </>);
 }
 

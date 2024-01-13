@@ -33,9 +33,10 @@ const Table = ({ data , loading}) => {
 
   return (
     <>
+    <div className="main-table">
       {selectedCandidates.length!==0 && <button className='update-status' onClick={()=>navigate(`/candidates/updateStatus/${selectedCandidates}`)}>Update</button>}
       <table>
-        <thead>
+        <thead className='table-header'>
           <tr>
             <th>
               <input
@@ -89,6 +90,8 @@ const Table = ({ data , loading}) => {
       </table>
       
       {loading && <Loader/>}
+
+    </div>
     </>
   );
 };

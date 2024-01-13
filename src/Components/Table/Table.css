@@ -1,8 +1,19 @@
+.main-table{
+  max-height: 500px;
+  overflow-y: auto;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
   margin-bottom: 100px;
+}
+
+.table-header{
+  position: sticky;
+  z-index: 100;
+  top: 0;
 }
 
 th, td {

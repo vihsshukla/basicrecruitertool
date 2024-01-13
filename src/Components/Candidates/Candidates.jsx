@@ -22,10 +22,12 @@ const Candidates=()=>{
   },[]);
 
   return (<>
+  <div className="candidates">
     <header className="header">
         <h3 className="h3text">Candidates List</h3>
     </header>
     <Table data={candidateData} loading={loading}/>
+  </div>
   </>);
 }
 
